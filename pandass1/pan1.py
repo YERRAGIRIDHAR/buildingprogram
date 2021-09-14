@@ -23,3 +23,11 @@ print(".............................................")
 y4=pd.read_csv("F:\PYTHON BASICS\pandass1\supermarkets\supermarkets-semi-colons.txt",sep=';')
 print(y4)
 print(".........................")
+y4_t= y4.T
+y4_t["order"]=["1st","2nd","3rd","4th","5th","6th","7th"]
+print(y4_t)
+print("..............................................")
+y5=y4_t.T
+print(y5)
+y5["order"]=["1st","2nd","3rd","4th","5th","6th","7th"]
+print(y5)
