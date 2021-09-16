@@ -20,7 +20,7 @@ def color_producer(elevation):
 
 '''Configuring map'''
 
-map = folium.Map(location=[34.22,-90.23], zoom_start=6, tile="Mapbox Bright")
+map = folium.Map(location=[34.22,-90.23], zoom_start=6, tiles="Stamen Terrain")
 
 '''For different locations and lan long, Layer-1 Volcaneos, 'Layer-2 Popolation'''
 

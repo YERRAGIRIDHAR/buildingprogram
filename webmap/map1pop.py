@@ -10,7 +10,7 @@ html = """<h4>Volcano information:</h4>
 Height: %s m
 """
  
-map = folium.Map(location=[38.58, -99.09], zoom_start=6, tiles="Stamen Terrain")
+map = folium.Map(location=[38.58, -99.09], zoom_start=6, tile="Mapbox Bright")
 fg = folium.FeatureGroup(name = "My Map")
  
 for lt, ln, el in zip(lat, lon, elev):
