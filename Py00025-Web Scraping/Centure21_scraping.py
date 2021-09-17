@@ -10,7 +10,7 @@ soup = BeautifulSoup(p,"html.parser")
 #print(soup.prettify())
 
 '''if web contain mulity pages we can with this(This information(url) according my source "Udemy")'''
-# base_url = "https://www.century21.com/real-estate/new-york-city-ny/LCNYNEWYORKCITY/?p="
+# base_url = "https://www.century21.com/real-estate/new-york-city-wy/LCNYNEWYORKCITY/?p="
 # for page in range(0,3,2):
 #     print(base_url+str(page))
 #     r1 = requests.get(base_url+str(page))
