@@ -1,8 +1,11 @@
 from enum import unique
+from typing import Text
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import psycopg2
+from send_email import send_email
+from sqlalchemy.sql import func
 
-#from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
@@ -15,9 +18,9 @@ class Data(db.Model):
     email=db.Column(db.String(120), unique=True)
     height_=db.Column(db.Integer)
 
-    def _init_(self, email_, height_):
-        self.email_=email_
-        self.height_=height_
+    def __init__(self, email, height_):
+        self.email= email
+        self.height_= height_
 
 @app.route("/")
 def index():
@@ -28,13 +31,18 @@ def success():
     if request.method=='POST':
         email=request.form["email_name"]
         height=request.form["height_name"]
-        print(email, height)
-        data=Data(email,height)
-        db.session.add(data)
-        db.session.commit
-    return render_template("success.html")
+        if db.session.query(Data).filter(Data.email == email).count() == 0:
+            data=Data(email,height)
+            db.session.add(data)
+            db.session.commit()
+            average_height=db.session.query(func.avg(Data.height_)).scalar()
+            average_height=round(average_height,1)
+            count = db.session.query(Data.hieght_).count()
+            send_email(email, height, average_height, count)
+            return render_template("success.html")
+    return render_template("index.html" , text = "Email already exist")
 
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     app.debug = True
     app.run()

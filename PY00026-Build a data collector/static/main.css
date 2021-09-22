@@ -36,8 +36,12 @@
 }
 
 .container p{
-    margin: 70px;
+    margin: 100px;
 
 }
 
-
+.message {
+    font-family: Arisl, sans-serif;
+    font-size:15px;
+    color: #24f508;
+}
