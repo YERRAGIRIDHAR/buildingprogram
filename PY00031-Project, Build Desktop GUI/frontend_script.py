@@ -17,19 +17,19 @@ def get_selected_row(event):
     except IndexError:
         pass
 
-'''To get data from view function in Backend.py file'''
+'''To get data from view function in backend_script.py file'''
 def view_command():
     list1.delete(0,END)
     for row in backend_script.view():
         list1.insert(END,row)
 
-'''To search data from search function in Backend.py file'''
+'''To search data from search function in backend_script.py file'''
 def search_command():
     list1.delete(0,END)
     for row in backend_script.search(title_text.get(), author_text.get(), year_text.get(), isbn_text.get()):
         list1.insert(END,row)  
 
-'''To insert data to insert function in Backend.py file'''
+'''To insert data to insert function in backend_script.py file'''
 def add_command():
     backend_script.insert(title_text.get(), author_text.get(), year_text.get(), isbn_text.get())
     list1.delete(0,END)
