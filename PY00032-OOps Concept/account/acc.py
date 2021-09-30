@@ -48,7 +48,7 @@ print(giri_checking.balance)
 giri_checking.commit()
     
 
-teja_checking = Checking("account//teja.txt", 1) #Object instance
+teja_checking = Checking("account\\teja.txt", 1) #Object instance
 teja_checking.transfer(100)
 print(teja_checking.balance)
 teja_checking.commit()
