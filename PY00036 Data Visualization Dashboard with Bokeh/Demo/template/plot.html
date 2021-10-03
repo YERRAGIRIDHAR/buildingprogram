@@ -1,0 +1,10 @@
+{%extends "layout.html"%}
+{%block content%}
+<script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.0.min.js"></script>
+    <div class="about">
+        <h1>My about page</h1>
+        <p>This is a test information website</p>
+    </div>
+    {{script1 | safe}}
+    {{div1 | safe}}
+{%endblock content%}
