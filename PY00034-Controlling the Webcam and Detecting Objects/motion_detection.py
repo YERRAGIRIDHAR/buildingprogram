@@ -34,15 +34,12 @@ while True:
         
         (x,y ,w,h) =cv2.boundingRect(contour)
         cv2.rectangle(frame, (x,y), (x+w, y+h), (0,255,0),3) # Joing the points in rectangular shape
-        #(255, 0 , 0)-->(BGR )
     status_list.append(status)
 
 
-    status_list=status_list[-2:]
-
     if status_list[-1] == 1 and status_list[-2] == 0:
         times.append(datetime.now())#recording the time when stsus changes from 1 to 0
-    if status_list[0] == 0 and status_list[1] == 1:
+    if status_list[-1] == 0 and status_list[-2] == 1:
         times.append(datetime.now())#recording the time when stsus changes from 0 to 1
 
     cv2.imshow("Gray", gray) #created a window with name Capturing name and hoding first frame
@@ -51,7 +48,7 @@ while True:
     cv2.imshow("Color Frame",  frame)
 
 
-    key = cv2.waitKey(5) #wait for 3 seconds and goes for next screen
+    key = cv2.waitKey(1) #wait for 3 seconds and goes for next screen
     # print(gray)
     # print(delta_frame)
 
@@ -64,10 +61,10 @@ while True:
     print(status_list)
     print(times)
 
-    for i in range(0, len(times), 2):
-        df = df.append({"Start":times[i], "End":times[i+1]}, ignore_index=True)
+for i in range(0, len(times), 2):
+    df = df.append({"Start":times[i], "End":times[i+1]}, ignore_index=True)
 
-    df.to_csv("Times.csv")
+df.to_csv("Times.csv")
 
 video.release()
 cv2.destroyAllWindows
