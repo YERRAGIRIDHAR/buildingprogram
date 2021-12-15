@@ -11,7 +11,7 @@ body {
    */
   
   header {
-    background-color: #ec8508;
+    background-color: #eca408;
     height: 35px;
     width: 100%;
     opacity: .9;
@@ -21,7 +21,7 @@ body {
   header h1.logo {
     margin: 0;
     font-size: 1.7em;
-    color: rgb(14, 200, 233);
+    color: rgb(14, 233, 32);
     text-transform: uppercase;
     float: left;
   }

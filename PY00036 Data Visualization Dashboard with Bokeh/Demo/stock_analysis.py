@@ -4,8 +4,8 @@ from bokeh.plotting import figure, show, output_file
 from bokeh.embed import components
 from bokeh.resources import CDN
 
-start = datetime.datetime(2015,10,3)
-end = datetime.datetime(2016,3,10)
+start = datetime.datetime(2021,5,21)
+end = datetime.datetime(2021,10,21)
 
 df = data.DataReader(name = "AAPL", data_source="yahoo", start=start, end=end)
 
@@ -23,7 +23,6 @@ df["Status"] = [inc_dec(c,o) for c, o in zip(df.Close, df.Open)]
 df["Middle"] = (df.Open+df.Close)/2
 df["Height"] = abs(df.Close-df.Open)
 
-# print(df)
 
 p = figure(x_axis_type ='datetime', width = 1000, height = 300, sizing_mode = "scale_width")
 p.title.text ="Candlestick Chart"

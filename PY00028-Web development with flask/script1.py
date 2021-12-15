@@ -7,7 +7,7 @@ def home():
     return render_template("home.html")
 
 @Web.route('/about/')
-def about():
+def about(): 
     return render_template("about.html")
 
 if __name__ == "__main__":

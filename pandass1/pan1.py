@@ -11,23 +11,23 @@ print("...........")
 x3=x2.mean().mean()
 print(x3)
 print('.............')
-y1=pd.read_csv("F:\PYTHON BASICS\pandass1\supermarkets\supermarkets.csv")
-print(y1)
-print(".....................................")
-y2=pd.read_json("F:\PYTHON BASICS\pandass1\supermarkets\supermarkets.json")
-print(y2.set_index("ID"))
-print("......................................")
-y3=pd.read_excel("F:\PYTHON BASICS\pandass1\supermarkets\supermarkets.xlsx")
-print(y3)
-print(".............................................")
-y4=pd.read_csv("F:\PYTHON BASICS\pandass1\supermarkets\supermarkets-semi-colons.txt",sep=';')
-print(y4)
-print(".........................")
-y4_t= y4.T
-y4_t["order"]=["1st","2nd","3rd","4th","5th","6th","7th"]
-print(y4_t)
-print("..............................................")
-y5=y4_t.T
-print(y5)
-y5["order"]=["1st","2nd","3rd","4th","5th","6th","7th"]
-print(y5)
+# y1=pd.read_csv("F:\PYTHON BASICS\pandass1\supermarkets\supermarkets.csv")
+# print(y1)
+# print(".....................................")
+# y2=pd.read_json("F:\PYTHON BASICS\pandass1\supermarkets\supermarkets.json")
+# print(y2.set_index("ID"))
+# print("......................................")
+# y3=pd.read_excel("F:\PYTHON BASICS\pandass1\supermarkets\supermarkets.xlsx")
+# print(y3)
+# print(".............................................")
+# y4=pd.read_csv("F:\PYTHON BASICS\pandass1\supermarkets\supermarkets-semi-colons.txt",sep=';')
+# print(y4)
+# print(".........................")
+# y4_t= y4.T
+# y4_t["order"]=["1st","2nd","3rd","4th","5th","6th","7th"]
+# print(y4_t)
+# print("..............................................")
+# y5=y4_t.T
+# print(y5)
+# y5["order"]=["1st","2nd","3rd","4th","5th","6th","7th"]
+# print(y5)

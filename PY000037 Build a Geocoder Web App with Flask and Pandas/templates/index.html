@@ -4,19 +4,20 @@
 <head>
     <link href = "../static/main.css", rel="stylesheet">
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
     <body>
         <div class="container">
-            <h1>Super Geocoder</h1>
+            <h1 style="color: rgb(19, 239, 247) ;">Super Geocoder</h1>
             <h2>Please uplod csv files</h2>
             <form action="{{url_for('success_table')}}" method ='POST' enctype="multipart/form-data">
                 <input type="file" accept=".csv" name="file" />
-                <button type="submit">Submit</button>
+                <button type="submit"> Submit </button>
             </form>
         <div class="output">
             {{text | safe}}
            
             {% if btn %}
-            {% include btn %}
+            {% include btn ignore missing %}
             {% endif %}
         </div>
         </div>
